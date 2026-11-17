@@ -1,0 +1,366 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>経営者論 ★必ず覚える12問</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap">
+<style>
+/* デジタル庁デザインシステム（DADS）を土台にしたスタイル。marketing-quiz とそろえています。 */
+:root {
+  --c-key: #0017C1; --c-key-hover: #00118F; --c-key-bg: #E8F1FE;
+  --c-text: #1A1A1A; --c-text-sub: #4D4D4D;
+  --c-bg: #FFFFFF; --c-bg-page: #F4F6FA; --c-bg-sub: #F2F2F2;
+  --c-border: #D8DCE3; --c-border-field: #666666;
+  --c-success: #197A4B; --c-success-bg: #E6F5EC; --c-error: #CE0000; --c-error-bg: #FDEEEE;
+  --c-focus: #FFD43D;
+  --font: "Noto Sans JP", "Hiragino Sans", "Yu Gothic UI", "Meiryo", sans-serif;
+  --r: 8px;
+  color-scheme: light;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; }
+[hidden] { display: none !important; }
+body { background: var(--c-bg-page); color: var(--c-text); font-family: var(--font); font-size: 16px; line-height: 1.7; letter-spacing: .02em; }
+:focus-visible { outline: 4px solid var(--c-focus); outline-offset: 2px; box-shadow: 0 0 0 2px var(--c-text); border-radius: 4px; }
+.wrap { max-width: 880px; margin: 0 auto; padding: 0 16px; }
+.appbar { position: sticky; top: 0; z-index: 10; background: var(--c-key); color: #FFF; }
+.appbar .wrap { height: 60px; display: flex; align-items: center; gap: 12px; }
+.brand { font-weight: 900; font-size: 17px; }
+.toplink { margin-left: auto; color: #FFF; font-weight: 700; font-size: 14px; text-decoration: underline; text-underline-offset: 3px; white-space: nowrap; }
+.toplink + .progress { margin-left: 12px; }
+.progress { margin-left: auto; font-size: 14px; font-weight: 700; white-space: nowrap; }
+.hero { background: var(--c-key); color: #FFF; padding: 28px 0 32px; }
+.hero h1 { margin: 0 0 8px; font-size: 26px; line-height: 1.4; }
+.hero p { margin: 0; opacity: .92; }
+main { padding: 24px 0 64px; }
+.tips { background: var(--c-bg); border: 1px solid var(--c-border); border-radius: var(--r); padding: 16px 20px; margin-bottom: 24px; }
+.star { color: #b8860b; }
+.tips h2 { margin: 0 0 8px; font-size: 17px; }
+.tips h2.sub { margin-top: 16px; }
+.tbl { overflow-x: auto; margin: 0 -4px; }
+.tbl table { border-collapse: collapse; width: 100%; min-width: 560px; font-size: 14px; }
+.tbl th, .tbl td { border: 1px solid var(--c-border); padding: 8px 10px; text-align: left; vertical-align: top; }
+.tbl th { background: var(--c-bg-sub); }
+.tbl td:first-child, .tbl td:nth-child(2) { white-space: nowrap; }
+.tips ul { margin: 0; padding-left: 1.3em; }
+.filter { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; }
+.chip { min-height: 44px; padding: 0 16px; border-radius: 999px; border: 1px solid var(--c-key); background: var(--c-bg); color: var(--c-key); font: inherit; font-weight: 700; cursor: pointer; }
+.chip[aria-pressed="true"] { background: var(--c-key); color: #FFF; }
+.card { background: var(--c-bg); border: 1px solid var(--c-border); border-radius: var(--r); padding: 20px; margin-bottom: 20px; }
+.card-head { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; margin-bottom: 8px; }
+.qno { font-weight: 900; color: var(--c-key); font-size: 18px; }
+.qtitle { font-weight: 700; font-size: 18px; margin: 0; }
+.tag { font-size: 13px; font-weight: 700; color: var(--c-text-sub); background: var(--c-bg-sub); border-radius: 4px; padding: 2px 8px; }
+.prompt { margin: 0 0 12px; }
+textarea { width: 100%; min-height: 160px; padding: 12px; font: inherit; line-height: 1.7; border: 1px solid var(--c-border-field); border-radius: var(--r); resize: vertical; }
+.meta { display: flex; justify-content: space-between; font-size: 14px; color: var(--c-text-sub); margin: 6px 0 12px; }
+.btns { display: flex; flex-wrap: wrap; gap: 8px; }
+.btn { min-height: 48px; padding: 0 20px; border-radius: var(--r); font: inherit; font-weight: 700; cursor: pointer; border: 1px solid var(--c-key); }
+.btn-primary { background: var(--c-key); color: #FFF; }
+.btn-primary:hover { background: var(--c-key-hover); }
+.btn-secondary { background: var(--c-bg); color: var(--c-key); }
+.result { margin-top: 14px; padding: 12px 16px; border-radius: var(--r); }
+.result.ok { background: var(--c-success-bg); border-left: 6px solid var(--c-success); }
+.result.ng { background: var(--c-error-bg); border-left: 6px solid var(--c-error); }
+.kw { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; padding: 0; list-style: none; }
+.kw li { font-size: 14px; padding: 2px 10px; border-radius: 999px; border: 1px solid; }
+.kw .hit { color: var(--c-success); border-color: var(--c-success); background: #FFF; }
+.kw .miss { color: var(--c-error); border-color: var(--c-error); background: #FFF; }
+.answer { margin-top: 14px; padding: 14px 16px; background: var(--c-key-bg); border-radius: var(--r); }
+.answer h3 { margin: 0 0 6px; font-size: 15px; color: var(--c-key); }
+.answer p { margin: 0; }
+footer { color: var(--c-text-sub); font-size: 14px; padding: 24px 0 40px; border-top: 1px solid var(--c-border); }
+@media (max-width: 600px) {
+  .tbl table { min-width: 0; }
+  .tbl thead { display: none; }
+  .tbl tr { display: block; border: 1px solid var(--c-border); border-radius: var(--r); padding: 10px 12px; margin-bottom: 10px; }
+  .tbl td { display: inline; border: 0; padding: 0; }
+  .tbl td:nth-child(1) { font-weight: 900; color: var(--c-key); margin-right: 6px; }
+  .tbl td:nth-child(2) { font-size: 13px; color: var(--c-text-sub); }
+  .tbl td:nth-child(3) { display: block; font-weight: 700; margin: 4px 0; }
+  .tbl td:nth-child(4) { display: block; }
+}
+@media (max-width: 480px) { .hero h1 { font-size: 22px; } .btn { flex: 1 1 auto; } }
+</style>
+</head>
+<body>
+<header class="appbar"><div class="wrap"><span class="brand">経営者論 ★12問</span><a class="toplink" href="./">全37問へ</a><span class="progress" id="progress"></span></div></header>
+<section class="hero"><div class="wrap">
+  <h1>経営者論 ★必ず覚える12問</h1>
+  <p>水2「経営者論」第1〜7回の論述37問のうち、確実に書けるようにしておきたい12問だけを集めたページです。まず下の「これだけは書く」を覚え、問題で書く練習をしましょう。</p>
+</div></section>
+<main class="wrap">
+  <section class="tips">
+    <h2>これだけは書く（12問のポイント）</h2>
+    <div class="tbl"><table>
+      <thead><tr><th scope="col">問</th><th scope="col">回</th><th scope="col">テーマ</th><th scope="col">これだけは書く</th></tr></thead>
+      <tbody>
+        <tr><td>問1</td><td>第1回</td><td>オーナー経営者とサラリーマン経営者</td><td>所有と経営の不分離／分離。オーナー＝素早い決断だが私物化・ワンマン、サラリーマン＝調整力・交代しやすいがリスク回避</td></tr>
+        <tr><td>問2</td><td>第1・2回</td><td>戦略的意思決定（アンゾフ）</td><td>戦略的（トップ）・管理的（ミドル）・業務的（現場）。要件5つ＝問題形成・現状改革・具現化・リスクテイキング（胆力）・哲学と信念</td></tr>
+        <tr><td>問3</td><td>第2回</td><td>企業家的能力と管理者的能力（大沢）</td><td>企業家的＝問題形成能力（オーナー）、管理者的＝問題解決型の適応能力（サラリーマン）。例：石橋正二郎が地下足袋からタイヤへ</td></tr>
+        <tr><td>問4</td><td>第2回</td><td>カッツの3つのスキル</td><td>概念的・対人的・実務的。トップ＝概念的が最重要、ロワー＝対人的と実務的が極めて重要</td></tr>
+        <tr><td>問5</td><td>第2回</td><td>弱い紐帯の強さ（グラノヴェター）</td><td>たまに会う人ほど新しい情報をくれる。強い紐帯＝信頼にもとづく協力（町工場の仲間回し）</td></tr>
+        <tr><td>問7</td><td>第3・4回</td><td>起業家精神と観光農園</td><td>ドラッカー＝起業家は「変化を利用する者」。遅霜で団体客キャンセル（予期せぬ出来事）→個人客・リピーター、HP・宅配で直接取引</td></tr>
+        <tr><td>問12</td><td>第3・4回</td><td>起業家のとらえ方と7つの機会</td><td>セイ＝資源を生産性の高い所へ、シュンペーター＝創造的破壊、ドラッカー＝変化を利用。7つ＝予期せぬこと・ギャップ・ニーズ・産業構造・人口構造・認識・新しい知識</td></tr>
+        <tr><td>問8</td><td>第5・6回</td><td>近江商人の三方よし</td><td>売り手よし・買い手よし・世間よし。地縁のない「国外」で商売→地域の信頼が不可欠。飢饉の施米、秩父事件で矢尾家は襲われず</td></tr>
+        <tr><td>問9</td><td>第5・6回</td><td>ファーマーズマーケットの意義</td><td>食のグローバル化→ブラックボックス化→信頼低下。パルコde朝市＝高齢者に新鮮な野菜、「誰かのために」、消費者どうしの社交の場</td></tr>
+        <tr><td>問29</td><td>第7回</td><td>企業城下町と地場産業地域（間）</td><td>企業城下町＝巨大企業中心、地域社会が企業に同調（豊田市）。地場産業地域＝中小企業中心、企業が地域社会に同調（燕市）</td></tr>
+        <tr><td>問31</td><td>第7回</td><td>大田区の町工場と紙飛行機神話</td><td>移転・オイルショック→特定加工に特化、NC機械→多種少量・短納期・高精度。紙飛行機神話＝図面が地域を一周すれば製品に</td></tr>
+        <tr><td>問32</td><td>第7回</td><td>地場産業の共同性と産地の効果</td><td>共同性＝情報交換・資金や仕事の融通・団結・冠婚葬祭の互助。効果＝原料・技術の蓄積・伝統・社会的分業・商人</td></tr>
+      </tbody>
+    </table></div>
+    <h2 class="sub">流れで覚える</h2>
+    <ul>
+      <li><strong>経営者のタイプ</strong>（問1・3）：オーナー型は問題を「つくる」力、サラリーマン型は問題を「解く」力</li>
+      <li><strong>経営者の仕事</strong>（問2・4）：上に立つほど、戦略的意思決定と全体を見る概念的スキルが大事</li>
+      <li><strong>つながり</strong>（問5）：新しい情報は弱い紐帯から、信頼と協力は強い紐帯から</li>
+      <li><strong>変化を機会に</strong>（問7・12）：起業家は変化を利用する者。観光農園は不運をきっかけに経営を変えた</li>
+      <li><strong>経営者と地域</strong>（問8・9・29・31・32）：地域の信頼（三方よし）、交流（朝市）、共同性（地場産業・町工場）が経営を支える</li>
+    </ul>
+  </section>
+  <div class="filter" role="group" aria-label="表示する回">
+    <button class="chip" data-f="all" aria-pressed="true">すべて</button>
+    <button class="chip" data-f="1" aria-pressed="false">第1回</button>
+    <button class="chip" data-f="2" aria-pressed="false">第2回</button>
+    <button class="chip" data-f="3" aria-pressed="false">第3回</button>
+    <button class="chip" data-f="4" aria-pressed="false">第4回</button>
+    <button class="chip" data-f="5" aria-pressed="false">第5・6回</button>
+    <button class="chip" data-f="7" aria-pressed="false">第7回</button>
+    <button class="chip" data-f="todo" aria-pressed="false">未クリアだけ</button>
+  </div>
+  <div id="list"></div>
+</main>
+<footer><div class="wrap">問題は個人の復習用に作ったもので、授業の公式な資料ではありません。入力した答えはこのブラウザにだけ保存されます。</div></footer>
+
+<script>
+const Q = [
+  { no: 1, star: true, rounds: [1], title: "オーナー経営者とサラリーマン経営者",
+    prompt: "オーナー経営者（所有者企業）とサラリーマン経営者（経営者企業）の違いを、「所有と経営」という言葉を使って説明し、それぞれの長所と短所を述べなさい。",
+    kw: [["所有と経営"], ["分離"], ["私物化", "ワンマン"], ["企業家精神", "素早い", "決断"], ["調整", "現場"], ["リスク"]],
+    ans: "オーナー経営者は所有と経営が分離しておらず、大株主であるオーナーが意思決定を行う。企業家精神が高く素早い決断ができる一方、会社の私物化やワンマン経営に陥る危険がある。サラリーマン経営者は所有と経営が分離し、株をほとんど持たない専門経営者が経営する。現場に精通し調整力に優れ、失敗したときに交代させやすいが、リスクを避けて新しい試みや責任ある決断を避けがちである。" },
+  { no: 2, star: true, rounds: [1, 2], title: "戦略的意思決定",
+    prompt: "アンゾフの意思決定の3分類を説明し、トップが担う戦略的意思決定にはどのような要件が必要か述べなさい。",
+    kw: [["戦略的"], ["管理的"], ["業務的"], ["問題形成"], ["現状改革"], ["具現化"], ["リスクテイキング", "胆力"], ["哲学", "信念"]],
+    ans: "アンゾフは意思決定を、経営の基本方針に関わる戦略的意思決定（トップ）、基本方針の下で資源配分などを決める管理的意思決定（中間管理層）、日常の能率や収益性に関わる業務的意思決定（現場）に分けた。戦略的意思決定には、①問題形成指向、②現状改革指向、③具現化指向、④リスクテイキング指向（胆力）、⑤哲学・信念の存在、の5つの要件が必要である。" },
+  { no: 3, star: true, rounds: [2], title: "企業家的能力と管理者的能力",
+    prompt: "大沢（2004）の企業家的能力と管理者的能力の違いを説明し、具体例を挙げて述べなさい。",
+    kw: [["問題形成"], ["問題解決"], ["オーナー"], ["サラリーマン", "専門経営者"], ["石橋正二郎", "ブリヂストン"]],
+    ans: "企業家的能力は、自ら変化を求めて新しい可能性に挑戦する「問題形成能力」で、オーナー経営者に特徴的である。管理者的能力は、与えられた状況の中で最適解を求める「問題解決型の適応能力」で、サラリーマン経営者に適合的である。例えば、ブリヂストン創業者の石橋正二郎は、兄の反対を押し切って地下足袋からタイヤ製造へ進出しており、強い事業意欲という企業家的能力を発揮した。" },
+  { no: 4, star: true, rounds: [2], title: "カッツの3つのスキル",
+    prompt: "カッツの3つのスキルを挙げ、管理階層によって重要度がどう変わるか説明しなさい。",
+    kw: [["概念的"], ["対人的"], ["実務的"], ["トップ"], ["ミドル"], ["ロワー"]],
+    ans: "カッツは管理者に必要なスキルを、概念的スキル（理念・ビジョン・長期戦略を考える力）、対人的スキル（部下育成や折衝など人を動かす力）、実務的スキル（業務の専門的な知識・技術）の3つに分けた。トップでは概念的スキルが最も重要で、ミドルでは対人的スキルがかなり重要、ロワーでは対人的スキルと実務的スキルが極めて重要になる。階層が上がるほど概念的スキルの比重が大きくなる。" },
+  { no: 5, star: true, rounds: [2], title: "弱い紐帯の強さ",
+    prompt: "グラノヴェターの「弱い紐帯の強さ」とは何か説明し、強い紐帯の強みについても例を挙げて述べなさい。",
+    kw: [["弱い紐帯"], ["たまに"], ["情報"], ["転職"], ["信頼", "協力"], ["仲間回し", "町工場"]],
+    ans: "弱い紐帯の強さとは、いつも会う親しい人よりも、たまにしか会わない人の方が新しく役立つ情報をもたらすという考え方である。グラノヴェターは、転職者が役立つ情報を弱い紐帯から得ていたことを示した。親しい人どうしは同じ情報を共有しがちだからである。一方、強い紐帯には信頼にもとづく協力という強みがあり、大田区や東大阪の町工場の「仲間回し」のように、互いの技術を知る工場どうしが仕事を融通し合う例がある。" },
+  { no: 6, rounds: [2], title: "柳井正の経営者論",
+    prompt: "柳井正が考える「経営者」と「成果」とは何か。また、経営者に必要な4つの力を挙げなさい。",
+    kw: [["成果をあげる"], ["約束"], ["変革"], ["儲ける"], ["チーム"], ["理想"]],
+    ans: "柳井正は、経営者とは「成果をあげる人」であり、成果とは顧客や社会、従業員などに約束したことを実現することだと述べた。また「儲けることが大切」と「儲ければいい」は違い、使命を持って事業を行うことが大切だとした。経営者に必要な力として、変革する力（イノベーター）、儲ける力（商売人）、チームを作る力（本物のリーダー）、理想を追求する力（使命とともに生きる）の4つを挙げている。" },
+  { no: 7, star: true, rounds: [3], title: "起業家精神と観光農園",
+    prompt: "ドラッカーの起業家の定義を説明し、南アルプス市の観光農園経営者がイノベーションの機会をどのように利用したか述べなさい。",
+    kw: [["変化を利用"], ["機会"], ["遅霜", "予期せぬ"], ["団体客"], ["個人客", "リピーター"], ["ホームページ", "宅配", "直接取引"]],
+    ans: "ドラッカーは起業家を「変化を利用する者」と定義した。起業家は自ら変化を起こすとは限らず、変化を探し、対応し、機会として利用する。南アルプス市では、遅霜による営業期間の短縮で団体客をキャンセルせざるを得ず、農協と旅行会社の信頼関係が揺らいだ（予期せぬ出来事）。そこで篤農家は個人客やリピーターを重視し、ホームページで発信したり宅配を広げたりして直接取引を増やし、変化を機会に変えた。" },
+  { no: 8, star: true, rounds: [5, 6], title: "近江商人の三方よし",
+    prompt: "近江商人の「三方よし」とは何か。また、近江商人にとってそれが重要だった理由を説明しなさい。",
+    kw: [["売り手よし"], ["買い手よし"], ["世間よし"], ["地縁", "血縁", "国外"], ["信頼"], ["飢饉", "秩父", "矢尾"]],
+    ans: "三方よしとは、売り手よし・買い手よし・世間よしの考え方で、取引の当事者だけでなく、その背後にある社会全体にも配慮する経営理念である。近江商人の商いは地縁や血縁のない近江の「国外」が中心だったため、進出先の人々から信頼されることが欠かせなかった。そのため、飢饉のときに米を安く売る、利益を寺社やインフラに還元するなど地域に配慮した。秩父事件で矢尾家の店が襲われなかったのはその表れである。" },
+  { no: 9, star: true, rounds: [5, 6], title: "ファーマーズマーケットの現代的意義",
+    prompt: "ファーマーズマーケットが隆盛している背景と、パルコde朝市の現代的な役割を説明しなさい。",
+    kw: [["グローバル"], ["ブラックボックス"], ["信頼", "偽装"], ["高齢者", "交通弱者"], ["誰かのために"], ["社交", "交流"]],
+    ans: "食料供給のグローバル化で生産と消費の距離が広がり、誰がどこで作ったか分からないブラックボックス化が進んだ。食中毒や産地偽装で消費者の信頼が下がり、食の質やローカル性が重視されるようになったことが背景にある。岐阜市のパルコde朝市は、交通弱者の高齢者に新鮮な野菜を届けるために始まった。生産者は売上が少なくても「誰かのために」続けており、朝市は消費者どうしの社交の場という現代的な役割も果たしている。" }
+  ,{ no: 10, rounds: [1], gen: true, title: "経営者の役割と職能",
+    prompt: "清水（1995）の経営者の3つの役割と、間（1997）の経営者の職能を説明しなさい。",
+    kw: [["ビジョン", "経営理念"], ["戦略的意思決定"], ["執行管理"], ["意思決定者"], ["調整"], ["リーダー"], ["シンボル"]],
+    ans: "清水は経営者の役割を、①将来ビジョンの構築と経営理念の明確化、②不確実な未来に向けて今何をすべきかを決断する戦略的意思決定、③人を動機づけて信頼と協力を得る執行管理の3つとした。間は経営者の職能を、意思決定者や株主・顧客・従業員などの利害を調整する調整者という企業内的職能、経済界のリーダーという企業外的職能、企業の顔として経営理念を体現するシンボルとしての職能に分けた。" },
+  { no: 11, rounds: [1], gen: true, title: "専門経営者の優位性",
+    prompt: "森川（1996）が示した経営者企業（専門経営者）の優位性を説明し、専門経営者が抱えやすい問題点も述べなさい。",
+    kw: [["母集団"], ["厳しい環境"], ["しがらみ"], ["内部昇進", "現場"], ["交代"], ["リスク", "慣習"]],
+    ans: "森川は経営者企業の優位性として、①人材の母集団が大きい、②創業家族より厳しい環境で育つ、③家のしがらみから自由である、④内部昇進で現場に通じている、⑤失敗したときに交代させやすい、の5つを挙げた。専門経営者は階層組織に順応し、ボトムアップで調整的なリーダーシップを発揮する。一方で、リスクを避けて慣習を重んじ、新しい試みや責任ある決断を避けがちになるという問題点がある。" },
+  { no: 12, star: true, rounds: [3], gen: true, title: "起業家のとらえ方とイノベーションの機会",
+    prompt: "セイ、シュンペーター、ドラッカーの起業家のとらえ方を比較し、ドラッカーの「イノベーションの7つの機会」を挙げなさい。",
+    kw: [["生産性"], ["創造的破壊"], ["不均衡"], ["変化を利用"], ["予期せぬ"], ["ギャップ"], ["ニーズ"], ["産業構造"], ["人口構造"], ["認識"], ["新しい知識"]],
+    ans: "セイは起業家を、経済的資源を生産性の低いところから高いところへ移す者とした。シュンペーターは起業家の責務を創造的破壊とし、イノベーションによる動的な不均衡こそ経済の正常な姿だと考えた。ドラッカーは起業家を「変化を利用する者」と定義し、その機会として、予期せぬこと、ギャップ、ニーズ、産業構造の変化、人口構造の変化、認識の変化、新しい知識の7つを挙げた。これらは独立しておらず互いに重なり合う。" },
+  { no: 13, rounds: [3], gen: true, title: "ポスト生産主義と農村空間の商品化",
+    prompt: "ポスト生産主義とは何か。また、「農村空間の商品化」とその背景を説明しなさい。",
+    kw: [["効率", "収益"], ["環境", "教育", "観光"], ["消費"], ["都市住民"], ["非日常"], ["政策", "グリーン・ツーリズム"], ["メディア"]],
+    ans: "ポスト生産主義とは、20世紀後半の農村が生産の効率や収益性を優先して失ったものを取り戻すため、環境保全や教育、観光など農業生産以外の価値も含めて農業・農村をとらえる考え方である。農村空間の商品化とは、農村という場所そのものが都市住民によって観光やレクリエーションとして消費されるようになることである。背景には、都市化で農が日常から遠ざかり非日常になったこと、グリーン・ツーリズムなどの政策、メディアがつくる牧歌的な農村イメージがある。" },
+  { no: 14, rounds: [2], gen: true, title: "弱い紐帯と強い紐帯",
+    prompt: "グラノヴェターの「弱い紐帯の強さ」とバートの「構造的空隙」を説明し、強い紐帯にはどのような強みがあるか述べなさい。",
+    kw: [["弱い紐帯"], ["たまに"], ["新しい情報", "情報"], ["橋渡し"], ["構造的空隙"], ["仲介"], ["信頼", "協力"]],
+    ans: "弱い紐帯の強さとは、いつも会う親しい人よりも、たまにしか会わない人の方が新しく多様な情報をもたらすという考え方である。親しい人どうしは同じ情報を共有しがちで、弱い紐帯が密な集団どうしを橋渡しするからである。バートは、つながりの少ない集団の間のすき間を構造的空隙と呼び、そこを仲介する位置にいる人が利益を得やすいとした。一方、強い紐帯には、信頼にもとづく協力や学び合い、仕事の融通という強みがある。" },
+  { no: 15, rounds: [2], gen: true, title: "限定された合理性と状況に応じた能力",
+    prompt: "経済学と経営学の人間観の違いを説明し、経営者に求められる能力が状況によって変わるとされる理由を述べなさい。",
+    kw: [["合理的経済人"], ["経営人"], ["限定された合理性"], ["ドラッカー"], ["千差万別"], ["状況"]],
+    ans: "新古典派経済学は完全な合理性をもつ合理的経済人を仮定するが、経営学は合理的に決めようとしても情報や能力に限界がある経営人、すなわち限定された合理性をもつ人間として考える。また、ドラッカーによれば、成果をあげる経営者の資質や性格、知識は千差万別であった。そのため、経営者に求められる能力は一つに決まらず、その時々の状況や条件を考えに入れて考える必要がある。" },
+  { no: 16, rounds: [2], gen: true, title: "管理職の選び方と権限委譲",
+    prompt: "今の仕事で成果をあげた人を昇進させると「無能な上司」が生まれることがある理由を説明し、部下に仕事を任せる難しさや組織の同質性の危険についても述べなさい。",
+    kw: [["やる気"], ["管理職"], ["ピーターの法則"], ["権限委譲"], ["主体性"], ["コントロール"], ["同質性", "異論"]],
+    ans: "昇進には社員のやる気を引き出す役割と、管理職にふさわしい人を選ぶ役割があり、両立しにくい。今の仕事の成果で昇進させると、管理職に必要な能力をもたない人が昇進してしまう（ピーターの法則）。また、部下に仕事を任せる権限委譲は、部下の主体性を高める一方で上司はコントロールを失うため、誰にどこまで任せるかの見極めが必要である。さらに、似た考えの人ばかりの同質的な組織は協調しやすいが、異論や新しい探索が失われる危険がある。" },
+  { no: 17, rounds: [2], gen: true, title: "中小企業経営者と農業経営者",
+    prompt: "中小企業経営者と農業経営者の特徴を、大企業の経営者との違いに注目して説明しなさい。",
+    kw: [["99.7"], ["経済的動機"], ["非経済的", "ものづくり"], ["発展"], ["生産者", "生活者"], ["経営力"], ["地域"]],
+    ans: "中小企業は企業総数の99.7%を占めるが、これまでの経営者論は大企業中心だった。中小企業経営者は、家計や従業員の生活を守るという経済的動機と、ものづくりの気概という非経済的動機で動き、発展とは規模の成長ではなく持続的な経営基盤を築くことだとされる。農業経営者、特に家族経営では、経営者であると同時に生産者・生活者でもある。大泉は、経営力と地域への働きかけの両方が高い経営者をリーディングファーマーと呼んだ。" },
+  { no: 18, rounds: [5, 6], gen: true, title: "地域社会と共生する商人の経営",
+    prompt: "近江商人が地域社会と良い関係を築くために行った工夫を、「三方よし」以外の考え方や仕組みも挙げて説明しなさい。",
+    kw: [["世間よし", "三方よし"], ["陰徳善事"], ["お助け普請"], ["同郷"], ["競争しながら協力"], ["情報"]],
+    ans: "近江商人は地縁のない土地で商売をしたため、売り手・買い手だけでなく世間にも配慮する三方よしを重んじた。さらに、見返りを求めずに寺社への寄進や道路・橋の整備、飢饉時の施米・施金を行う陰徳善事や、不況期に建物を修築して仕事と雇用を生むお助け普請で、利益を地域に還元した。店員には価値観を共有しやすい同郷人を登用して信頼を保ち、同郷の商人どうしで仲間組織をつくって情報を交換し、競争しながら協力した。" },
+  { no: 19, rounds: [5, 6], gen: true, title: "直売が生産者・消費者・地域にもたらす意義",
+    prompt: "生産者と消費者が直接取引する直売やファーマーズマーケットは、生産者・消費者・地域のそれぞれにどのような意義があるか説明しなさい。",
+    kw: [["ブラックボックス"], ["顔が見える", "信頼"], ["新鮮"], ["交流"], ["誰かのために"], ["高齢者", "交通弱者"], ["社交"]],
+    ans: "食料供給のグローバル化で、誰がどう作ったか分からないブラックボックス化が進み、消費者の信頼が下がった。直売は生産から消費までの過程を短くし、生産者と消費者の距離を縮める。消費者にとっては、新鮮で生産者の顔が見える食べ物を買え、信頼感が得られる。生産者にとっては、消費者や他の農家との交流が営農意欲や品質向上につながり、売上が少なくても誰かのために続ける価値がある。地域にとっては、交通弱者である高齢者の食を支え、住民どうしの社交の場にもなる。" },
+  { no: 20, rounds: [1, 2], ess: true, title: "どんな経営者がよいかは状況しだい",
+    prompt: "「良い経営者」の条件が一つに決まらないのはなぜか。創業者タイプとたたき上げタイプの違いを踏まえ、会社がどんな状況のときにどちらのタイプが向いているかを論じなさい。",
+    kw: [["状況"], ["変化", "新しい"], ["安定", "調整"], ["リスク"], ["長所", "短所", "強み", "弱み"]],
+    ans: "経営者に求められる力は、会社が置かれた状況によって変わるからである。創業者タイプは自分で問題を見つけ、反対を押し切ってでも新しいことに挑めるため、業界が大きく変わる時期や事業を立ち上げる時期に向いている。一方、社内で育ったたたき上げタイプは現場を知り、人をまとめる力に優れるため、事業が安定し組織を着実に動かす時期に向いている。どちらにも長所と短所があり、状況に合った人を選ぶことが大切である。" },
+  { no: 21, rounds: [3], ess: true, title: "上に立つほど求められること",
+    prompt: "組織の上の立場になるほど、現場の作業の腕前よりも「全体を見て先を考える力」が大事になるのはなぜか。説明しなさい。",
+    kw: [["全体"], ["将来", "先"], ["方向", "ビジョン"], ["任せ", "部下"], ["判断", "決断"]],
+    ans: "上の立場の人の仕事は、自分で作業することではなく、組織全体がどこへ向かうかを決めることだからである。現場の作業は部下に任せられるが、将来の方向や大きな判断はトップにしかできない。上に行くほど判断の影響する範囲は広く、期間も長くなるため、目の前の作業より、全体を見て先を見通す力が必要になる。逆に現場に近い立場では、実際の作業の技術と、身近な人と協力する力が重要になる。" },
+  { no: 22, rounds: [3], ess: true, title: "成果を出した人を昇進させる落とし穴",
+    prompt: "今の仕事で成果を出した人を上の立場に引き上げることには、どんな問題があるか。また、その問題を避けるにはどうすればよいか、自分の考えを述べなさい。",
+    kw: [["能力", "向き"], ["違う", "別"], ["ごほうび", "やる気"], ["評価"], ["任せ"]],
+    ans: "今の仕事で成果を出す力と、上の立場で人をまとめ判断する力は別物だからである。昇進をがんばった人へのごほうびとして使うと、上の立場に向かない人が上がり、本人も組織も困ることになる。避けるには、昇進とごほうびを分け、成果には給料や表彰で報い、上の立場には人をまとめる力や先を考える力を見て選ぶことが考えられる。また、昇進前に小さく任せてみて、向き不向きを確かめる方法もある。" },
+  { no: 23, rounds: [3], ess: true, title: "二種類のつながり",
+    prompt: "いつも一緒にいる仲間とのつながりと、たまにしか会わない人とのつながりは、それぞれ組織や地域にどんな良さをもたらすか。どちらか一方だけでは不十分な理由も述べなさい。",
+    kw: [["信頼"], ["協力"], ["新しい", "情報"], ["同じ", "似"], ["両方", "バランス"]],
+    ans: "いつも一緒にいる仲間とは互いの力をよく知っているため、信頼して仕事を頼み合い、教え合うことができる。一方、たまにしか会わない人は自分たちと違う世界にいるため、新しい情報や発想をもたらしてくれる。仲間うちだけだと考えが似てしまい、行き詰まったときに新しい道が見えにくい。逆に浅い関係だけでは、困ったときに支え合う力が弱い。だから、深いつながりと広いつながりの両方を持つことが大切である。" },
+  { no: 24, rounds: [4], ess: true, title: "不運を機会に変える",
+    prompt: "経営者は自ら変化を起こさなければならないのか。思いがけない不運な出来事を、経営を良くするきっかけに変えるとはどういうことか、授業で扱った事例を踏まえて説明しなさい。",
+    kw: [["変化"], ["機会", "チャンス"], ["見つけ", "気づ"], ["転換", "切り替え"], ["客"]],
+    ans: "経営者が必ずしも自分で変化を起こす必要はなく、周りで起きた変化に気づき、それを機会として生かすことが大切である。例えば、天候の悪さで団体客を断らざるを得なかった果樹園では、それをきっかけに、一度に大勢来る客に頼るやり方の弱さに気づき、何度も来てくれる個人客を大切にする経営に切り替えた。不運をただの損失で終わらせず、やり方を見直すきっかけにすることが、変化を機会に変えるということである。" },
+  { no: 25, rounds: [4], ess: true, title: "いろいろな経営者がいる地域の強さ",
+    prompt: "一つの地域に、積極的に事業を広げる経営者と、無理せず今のやり方を続ける経営者が混在していることは、地域全体にとってなぜ良いといえるのか。説明しなさい。",
+    kw: [["引っ張", "けん引"], ["続け", "安定"], ["多様", "いろいろ"], ["イメージ", "集まり"], ["地域全体"]],
+    ans: "積極的な経営者は新しい取り組みで地域を引っ張り、外に向けて地域の名前を広める。一方、無理せず続ける経営者は、地域の産業を途切れさせず支える。さまざまなタイプの経営者がいることで、訪れる人には「この地域に行けばいろいろ楽しめる」という印象が生まれ、地域全体の魅力が高まる。全員が同じやり方をするより、役割の違う経営者が共存した方が、地域としての強さにつながる。" },
+  { no: 26, rounds: [5, 6], ess: true, title: "地域に尽くすことは自分のためになるか",
+    prompt: "経営者が利益の一部を地域のために使ったり、地域に配慮したりすることは、経営者自身にとってどんな意味があるのか。昔の商人の行動を例に考えなさい。",
+    kw: [["信頼"], ["地域"], ["長く", "続け"], ["守", "支え"], ["よそ者", "外"]],
+    ans: "地域に尽くすことは、結果的に経営者自身を守り、商売を長く続ける力になる。よその土地で商売をした昔の商人は、地元の人に信頼されなければ商売を続けられなかった。そのため、飢饉のときに米を安く売ったり、橋や道を整えたりして地域に配慮した。その結果、地域の人々が苦しんだ時期にも店は襲われず、信頼が店を守った。地域への配慮は単なる善意ではなく、長い目で見た経営の土台である。" },
+  { no: 27, rounds: [5, 6], ess: true, title: "もうからないのに続く事業",
+    prompt: "収入の柱にならないのに、生産者が続けている活動があるのはなぜか。経営の目的は利益だけなのか、あなたの考えを述べなさい。",
+    kw: [["誰かのため"], ["交流", "つながり"], ["やりがい"], ["利益だけ"], ["地域"]],
+    ans: "生産者がその活動に、お金以外の価値を見いだしているからである。例えば、高齢者のために続けている朝市では、売上は少なくても、客から直接感想を聞けることや、他の生産者と交流できることが、仕事のやりがいや意欲につながっている。また、地域の人の食を支えるという役割を感じている。経営は利益がなければ続かないが、利益だけが目的ではなく、人や地域の役に立つことも経営を続ける大きな理由になると考える。" },
+  { no: 28, rounds: [5, 6], ess: true, title: "競争と協力は両立するか",
+    prompt: "同じ商売をするライバルどうしが協力することは、矛盾しているように見える。それでも協力することに意味があるのはなぜか。説明しなさい。",
+    kw: [["情報"], ["一人", "限り"], ["信頼"], ["協力"], ["新しい", "市場"]],
+    ans: "一人で集められる情報や力には限りがあり、協力した方が全員にとって得になる場面があるからである。昔の同郷の商人たちは互いにライバルだったが、各地で得た情報を仲間うちで交換することで、一人では見つけられない商機をつかみ、新しい市場を開いた。普段は競い合いながらも、信頼できる相手とは情報や仕事を分け合うことで、全体のパイを大きくできる。競争と協力は両立し、うまく組み合わせることで強くなれる。" },
+  { no: 29, star: true, rounds: [7], title: "企業城下町と地場産業地域",
+    prompt: "企業城下町と地場産業地域の違いを「同調」という言葉を使って説明し、それぞれの例として授業で扱った地域を挙げなさい。",
+    kw: [["企業城下町"], ["地場産業"], ["同調"], ["巨大企業", "大企業"], ["中小企業"], ["豊田"], ["燕", "大田"]],
+    ans: "間（1997）によると、企業城下町は巨大企業が中心で、地域社会がその企業に同調している地域である。豊田市はトヨタの企業城下町で、製造品出荷額等は全国1位、そのうち9割以上が自動車関連であり、市内の工場で働く人の約8割が自動車関連製造業に従事している。一方、地場産業地域は中小企業が中心で、企業が地域社会に同調している地域で、洋食器の燕市がその例である。多くの地域はこの両極の中間にある。" },
+  { no: 30, rounds: [7], title: "燕市の研磨技術とグローバル化",
+    prompt: "燕市の研磨業者がアップル社のiPodの仕事を得た理由と、その後の変化を説明し、地場産業がグローバル化にどう向き合ったかを述べなさい。",
+    kw: [["研磨", "磨き"], ["技術"], ["集積"], ["アップル", "iPod"], ["中国", "アジア", "海外"], ["高度", "付加価値", "1個"]],
+    ans: "燕市周辺には金属を鏡のように磨くバフ研磨の業者が集積し、薄い金属を加工する高い技術があったため、アップル社はiPodの裏面の鏡面加工を燕市に任せた。最盛期は約20事業所で1日2万個を磨いた。しかし生産量が増えると中国工場でも研磨されるようになり、技術移転もあって生産はアジアへ移った。その後、磨き屋の中には量より質を重視し、高度な部品磨きや独自製品の開発に活路を求める動きが生まれた。" },
+  { no: 31, star: true, rounds: [7], title: "大田区の町工場と「紙飛行機神話」",
+    prompt: "大田区の町工場が「多種少量・短納期・高精度」の地域になった経緯を説明し、「紙飛行機神話」が表す大田区の強みを述べなさい。",
+    kw: [["移転", "オイルショック"], ["特化"], ["NC"], ["多種少量", "短納期", "高精度"], ["紙飛行機"], ["集積"], ["仲間回し", "回しあい", "信頼"]],
+    ans: "大田区では大工場から独立した零細工場が増えたが、親工場の地方移転やオイルショックを経て、一社に依存する形から特定の加工分野に特化する形へ変わった。1985年以降はNC機械を導入し、多種少量・短納期・高精度の地域になった。紙飛行機神話とは、大企業でも加工できない図面も地域を一周すれば製品になって戻るという言葉で、多様な技術をもつ工場が集積し、仲間回しで仕事を回しあう強みを表している。" },
+  { no: 32, star: true, rounds: [7], gen: true, title: "地場産業の共同性と産地の経済効果",
+    prompt: "地場産業の最大の強みとされる「共同性」とは何か具体例を挙げて説明し、同業者が集まって産地を形成することの経済効果を述べなさい。",
+    kw: [["共同性"], ["情報"], ["融通", "互助", "団結"], ["原料"], ["技術の蓄積", "技術"], ["伝統"], ["分業"], ["商人"]],
+    ans: "地場産業は経営資源の多くを地域社会に求めるため、地域を媒介とした同業者どうしの協力関係、すなわち共同性が生まれる。例えば、情報交換で市況を探る、不況時に資金や仕事を融通し合う、問屋の買い叩きに団結して対抗する、冠婚葬祭で助け合うといったものである。また産地を形成すると、原料の安定供給、技術の蓄積、伝統の継承、労働の平準化と社会的分業の発達、外部の情報を伝える商人の存在という経済効果が得られる。" },
+  { no: 33, rounds: [7], gen: true, title: "地場産業が抱える問題",
+    prompt: "地場産業が抱える問題点を複数挙げ、特に後継者が不足する理由を説明しなさい。",
+    kw: [["零細"], ["高齢化"], ["後継者"], ["低収入", "収入"], ["技術習得", "時間"], ["海外", "輸出", "販路"], ["住工混在"]],
+    ans: "地場産業には、生産設備が脆弱で多くが従業員5人以下と零細であること、経営者や職人の高齢化、販路の縮小や輸出の伸び悩み、海外産地の成長、住宅と工場が混じる住工混在による騒音などのトラブルといった問題がある。後継者が不足するのは、作業環境が古く、技術の習得に長い時間がかかるうえ、仕事の厳しさに見合わない低収入であるため、若い人に人気がないからである。" },
+  { no: 34, rounds: [7], gen: true, title: "集積の利益を生む信頼関係",
+    prompt: "町工場が狭い地域に集まることで、どのような利益が生まれるか。その利益を生み出すうえで重要な要素も合わせて説明しなさい。",
+    kw: [["集積"], ["特化", "専門"], ["仲間回し", "回しあい"], ["短納期", "多種少量"], ["信頼"], ["紹介", "知人"]],
+    ans: "町工場がそれぞれ特定の加工分野に特化しながら狭い地域に集まると、1社ではできない複雑な加工も、近くの工場どうしで仕事を回しあう仲間回しによって実現できる。その結果、多種少量・短納期・高精度の注文に応えられる地域全体の技術力が生まれる。ただし近くにいるだけでは利益は生まれず、取引の始まりは知人の紹介が多いため、互いの技術を知り合う個人間の信頼関係が最も重要な要素となる。" },
+  { no: 35, rounds: [7], ess: true, title: "一つの大企業に支えられた町",
+    prompt: "一つの大企業に地域の産業の多くを頼っている町には、どのような強みと弱みがあるか。地域の将来を考える立場から論じなさい。",
+    kw: [["雇用", "仕事"], ["安定"], ["依存", "頼"], ["影響", "左右"], ["多様", "別の産業"]],
+    ans: "強みは、大企業が多くの雇用と税収を生み、関連する工場も集まるため、地域の経済が安定し発展しやすいことである。一方で弱みは、地域がその企業の業績や方針に大きく左右されることである。企業が工場を移したり業績が悪化したりすると、地域全体の仕事や暮らしが一度に揺らぐ。地域の将来を考えると、その企業との関係を大切にしながらも、別の産業や小さな企業を育て、頼る先を多様にしておくことが大切である。" },
+  { no: 36, rounds: [7], ess: true, title: "仕事が海外へ移ったときの生き残り方",
+    prompt: "安い海外の工場に仕事が移っていくとき、日本の小さな工場はどのように生き残ればよいか。授業で扱った事例を踏まえて自分の考えを述べなさい。",
+    kw: [["量", "価格"], ["質", "高度"], ["技術"], ["他にない", "まね", "独自"], ["協力", "連携", "仲間"]],
+    ans: "量や価格の勝負では海外の工場にかなわないため、他にはまねできない技術や品質で勝負することが大切だと考える。金属を磨く仕事が海外へ移った地域でも、「1個を大事に」と高度な部品の磨きに切り替えた工場や、仲間と組んで独自の製品を作った工場があった。大量生産から離れ、手間のかかる仕事や自分たちだけの製品に力を注ぐこと、また一社ではできないことを近くの仲間と協力して実現することが生き残りの道である。" },
+  { no: 37, rounds: [7], ess: true, title: "近くにいるだけでは協力は生まれない",
+    prompt: "同じ業種の工場がたくさん集まっていても、それだけでは協力して仕事をすることはできない。協力を生むには何が必要か。理由とともに説明しなさい。",
+    kw: [["信頼"], ["知る", "知り合"], ["紹介", "付き合い"], ["技術", "得意"], ["時間", "長い"]],
+    ans: "協力を生むには、互いの信頼関係が必要である。仕事を任せるには、相手がどんな技術を持ち、約束を守るかを知っていなければならないからである。実際、近くの工場どうしでも取引の始まりは知人の紹介が多く、長い付き合いの中で互いの得意分野を知るからこそ、苦手な加工を頼んだり急ぎの仕事を分け合ったりできる。工場が集まっていることは条件にすぎず、人と人とのつながりがあって初めて集積の力が生まれる。" }
+].filter(q => q.star);
+const store = {
+  get(k, d) { try { const v = localStorage.getItem(k); return v == null ? d : JSON.parse(v); } catch (e) { return d; } },
+  set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) {} }
+};
+const KEY = "keieisha-ronjutsu-v1";
+const state = store.get(KEY, { text: {}, clear: {} });
+let filter = "all";
+
+function esc(s) { return s.replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c])); }
+function norm(s) { return s.replace(/\s/g, ""); }
+
+function render() {
+  const list = document.getElementById("list");
+  list.innerHTML = "";
+  Q.forEach(q => {
+    if (filter === "todo" && state.clear[q.no]) return;
+    if (filter === "gen" && !q.gen) return;
+    if (filter === "star" && !q.star) return;
+    if (filter === "ess" && !q.ess) return;
+    if (filter !== "all" && filter !== "todo" && filter !== "gen" && filter !== "ess" && filter !== "star" && !q.rounds.includes(Number(filter))) return;
+    const card = document.createElement("article");
+    card.className = "card";
+    const rounds = q.rounds.map(r => "第" + r + "回").join("・");
+    card.innerHTML =
+      '<div class="card-head"><span class="qno">問' + q.no + '</span><h2 class="qtitle">' + (q.star ? '<span class="star" aria-label="必ず覚える">★</span> ' : '') + esc(q.title) + '</h2><span class="tag">' + rounds + (q.gen ? "・企業名なし" : "") + (q.ess ? "・本質を問う" : "") + (state.clear[q.no] ? "・クリア済み" : "") + '</span></div>' +
+      '<p class="prompt">' + esc(q.prompt) + '</p>' +
+      '<label class="sr" for="t' + q.no + '" hidden>問' + q.no + 'の解答</label>' +
+      '<textarea id="t' + q.no + '" placeholder="ここに答えを書く（目安150〜200字）"></textarea>' +
+      '<div class="meta"><span id="c' + q.no + '">0字</span><span>キーワード ' + q.kw.length + '個</span></div>' +
+      '<div class="btns"><button class="btn btn-primary" data-act="check">キーワードチェック</button><button class="btn btn-secondary" data-act="ans" aria-expanded="false">解答例を見る</button></div>' +
+      '<div class="result" id="r' + q.no + '" hidden aria-live="polite"></div>' +
+      '<div class="answer" id="a' + q.no + '" hidden><h3>解答例</h3><p>' + esc(q.ans) + '</p></div>';
+    list.appendChild(card);
+    const ta = card.querySelector("textarea");
+    const cnt = card.querySelector("#c" + q.no);
+    ta.value = state.text[q.no] || "";
+    cnt.textContent = norm(ta.value).length + "字";
+    ta.addEventListener("input", () => {
+      state.text[q.no] = ta.value; store.set(KEY, state);
+      cnt.textContent = norm(ta.value).length + "字";
+    });
+    card.querySelector('[data-act="check"]').addEventListener("click", () => check(q, ta.value, card));
+    card.querySelector('[data-act="ans"]').addEventListener("click", e => {
+      const a = card.querySelector("#a" + q.no);
+      a.hidden = !a.hidden;
+      e.currentTarget.setAttribute("aria-expanded", String(!a.hidden));
+      e.currentTarget.textContent = a.hidden ? "解答例を見る" : "解答例を隠す";
+    });
+  });
+  if (!list.children.length) list.innerHTML = '<p class="card">この条件の問題はありません。</p>';
+  const done = Object.values(state.clear).filter(Boolean).length;
+  document.getElementById("progress").textContent = "クリア " + done + " / " + Q.length;
+}
+
+function check(q, text, card) {
+  const t = norm(text);
+  const res = q.kw.map(group => ({ label: group[0], hit: group.some(w => t.includes(norm(w))) }));
+  const hits = res.filter(r => r.hit).length;
+  const ok = hits === res.length;
+  const box = card.querySelector("#r" + q.no);
+  box.hidden = false;
+  box.className = "result " + (ok ? "ok" : "ng");
+  box.innerHTML = "<strong>" + (ok ? "OK：キーワードがすべて入っています。" : "あと少し：" + hits + " / " + res.length + " 個のキーワードが入っています。") + "</strong>" +
+    (t.length && t.length < 120 ? "<br>字数が少なめです（" + t.length + "字）。" : "") +
+    '<ul class="kw">' + res.map(r => '<li class="' + (r.hit ? "hit" : "miss") + '">' + (r.hit ? "○ " : "× ") + esc(r.label) + "</li>").join("") + "</ul>";
+  if (ok) { state.clear[q.no] = true; store.set(KEY, state); document.getElementById("progress").textContent = "クリア " + Object.values(state.clear).filter(Boolean).length + " / " + Q.length; }
+}
+
+document.querySelectorAll(".chip").forEach(b => b.addEventListener("click", () => {
+  filter = b.dataset.f;
+  document.querySelectorAll(".chip").forEach(x => x.setAttribute("aria-pressed", String(x === b)));
+  render();
+}));
+render();
+</script>
+</body>
+</html>
